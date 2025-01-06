@@ -58,22 +58,33 @@ project "Hazel"
 		postbuildcommands{
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" ..outputdir.. "/Sandbox")
 		}
-		buildoptions "/utf-8"
+		buildoptions {
+			"/utf-8",
+		}
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
 		symbols "On"
-		buildoptions "/utf-8"
+		buildoptions {
+			"/utf-8",
+			"/MDd"
+		}
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
 		optimize "On"
-		buildoptions "/utf-8"
+		buildoptions {
+			"/utf-8",
+			"/MD"
+		}
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
 		optimize "On"
-		buildoptions "/utf-8"
+		buildoptions {
+			"/utf-8",
+			"/MD"
+		}
 
 project "Sandbox"
 	location "Sandbox"
@@ -103,18 +114,29 @@ project "Sandbox"
 		defines{
 			"HZ_PLATFORM_WINDOWS",
 		}
-		buildoptions "/utf-8"
+		buildoptions {
+			"/utf-8",
+		}
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
-		buildoptions "/utf-8"
+		buildoptions {
+			"/utf-8",
+			"/MDd"
+		}
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
-		buildoptions "/utf-8"
+		buildoptions {
+			"/utf-8",
+			"/MD"
+		}
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
-		buildoptions "/utf-8"
+		buildoptions {
+			"/utf-8",
+			"/MD"
+		}
 		optimize "On"
