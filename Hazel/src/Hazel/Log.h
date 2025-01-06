@@ -2,6 +2,9 @@
 #include <memory>
 #include "Core.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
+
+
 namespace Hazel {
 	class HAZEL_API Log
 	{
@@ -14,6 +17,7 @@ namespace Hazel {
 		static std::shared_ptr<spdlog::logger> s_ClientLogger;
 	};
 }
+
 // Core log macros
 #define HZ_CORE_TRACE(...)    ::Hazel::Log::GetCoreLogger()->trace(__VA_ARGS__)
 #define HZ_CORE_INFO(...)     ::Hazel::Log::GetCoreLogger()->info(__VA_ARGS__)
