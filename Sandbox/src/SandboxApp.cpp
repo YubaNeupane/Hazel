@@ -1,12 +1,5 @@
 #include <Hazel.h>
-
-
-#include <glm/vec3.hpp> // glm::vec3
-#include <glm/vec4.hpp> // glm::vec4
-#include <glm/mat4x4.hpp> // glm::mat4
-#include <glm/ext/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale
-#include <glm/ext/matrix_clip_space.hpp> // glm::perspective
-#include <glm/ext/scalar_constants.hpp> // glm::pi
+#include "imgui/imgui.h"
 
 
 class ExampleLayer : public Hazel::Layer {
@@ -20,6 +13,14 @@ public:
 			HZ_TRACE("Tab key is pressed (poll)!");
 
 	}
+
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
+	}
+
 	void OnEvent(Hazel::Event& event) override {
 		if (event.GetEventType() == Hazel::EventType::KeyPressed) {
 			Hazel::KeyPressedEvent& e = (Hazel::KeyPressedEvent&)event;

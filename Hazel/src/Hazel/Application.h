@@ -2,16 +2,16 @@
 
 #include "Core.h"
 
-#include "Window.h"
-#include "Hazel/LayerStack.h"
-#include "Hazel/Events/Event.h"
 #include "Hazel/Events/ApplicationEvent.h"
+#include "Hazel/Events/Event.h"
+#include "Hazel/LayerStack.h"
+#include "Window.h"
 
 #include "Hazel/ImGui/ImGuiLayer.h"
 
 namespace Hazel {
 
-	class HAZEL_API Application
+	class  Application
 	{
 	public:
 		Application();
